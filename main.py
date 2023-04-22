@@ -40,10 +40,10 @@ async def on_ready():
 
 
 @bot.command()
-async def userinfo(ctx, member: discord.Member=None):
+async def userinfo(ctx, member: discord.Member = None):
     member = member if member is not None else ctx.author
 
-    info_embed = discord. Embed(title=f"{member.name}`s User Information", description="All information about this user.", color=member.color)
+    info_embed = discord.Embed(title=f"{member.name}`s User Information", description="All information about this user.", color=member.color)
     info_embed.set_thumbnail(url=member.avatar)
     info_embed.add_field(name="Name:", value=member.name, inline=False)
     info_embed.add_field(name="Nick Name:", value=member.display_name, inline=False)
@@ -103,7 +103,7 @@ async def on_message(message: Message):
     email_msg = "Someone mentioned you in channel " + message.channel.jump_url
     for user in mentions_notifier.subscribers:
         if f"@{user}" in message.content:
-            if mentions_notifier.subscribers[user] is True:
+            if mentions_notifier.subscribers[user]:
                 mentions_notifier.notify_about_mention(user, email_msg)
     await bot.process_commands(message)
 
@@ -122,7 +122,7 @@ async def play_hangman(ctx: Context) -> None:
     """
     bot.letters: list = []
     random_word: str = random.choice(words)
-    bot.random_word: str = "" + random_word
+    bot.random_word: str = random_word
     bot.secret_word: str = ""
     bot.list_random_word: list = []
     bot.list_secret_word: list = []
