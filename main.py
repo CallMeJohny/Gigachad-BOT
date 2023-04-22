@@ -41,10 +41,8 @@ async def on_ready():
 
 @bot.command()
 async def userinfo(ctx, member: discord.Member=None):
-    if member is None:
-        member = ctx.author
-    elif member is not None:
-        member = member
+    member = member if member is not None else ctx.author
+
     info_embed = discord. Embed(title=f"{member.name}`s User Information", description="All information about this user.", color=member.color)
     info_embed.set_thumbnail(url=member.avatar)
     info_embed.add_field(name="Name:", value=member.name, inline=False)
