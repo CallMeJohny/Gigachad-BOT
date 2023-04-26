@@ -222,12 +222,12 @@ class Fun(commands.Cog):
 
         # First message, that will be immediately edited
         embed = discord.Embed(title="Starting Hangman...", color=discord.Color.dark_gold())
-        msg = await ctx.channel.send(embed=embed)
+        starting_msg = await ctx.channel.send(embed=embed)
         hangman_msg = bot.hangman.call_hangman()
         # Editting the first message
         embed = discord.Embed(title="Hangman", color=discord.Color.dark_gold())
         embed.add_field(name="", value=hangman_msg, inline=False)
-        bot.msg = await msg.edit(embed=embed)
+        bot.starting_msg = await starting_msg.edit(embed=embed)
 
     @commands.command(name="guess")
     async def guess(self, ctx: Context, letter: str) -> None:
