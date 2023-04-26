@@ -177,7 +177,6 @@ class Fun(commands.Cog):
         meme_list = meme_generator.list_memes()
         await ctx.send(f"**Memes**```\n{meme_list}```")
 
-
     @commands.command(name="make_meme")
     async def make_meme(
         self, ctx: Context, template_id: int, top_text: str, bottom_text: str
@@ -229,7 +228,6 @@ class Fun(commands.Cog):
         embed = discord.Embed(title="Hangman", color=discord.Color.dark_gold())
         embed.add_field(name="", value=hangman_msg, inline=False)
         bot.msg = await msg.edit(embed=embed)
-
 
     @commands.command(name="guess")
     async def guess(self, ctx: Context, letter: str) -> None:
