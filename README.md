@@ -21,7 +21,7 @@ To add Gigachad bot to your Discord server, follow these steps:
 5. Make a new .env file, where you'll add your **DISCORD_TOKEN**, discord **NICKNAME** and discord **PASSWORD**
 6. If you want to use all comands, you'll need to make **API KEYS** for the specific commands.
 6. Configure the bot by setting up custom commands, welcome messages, automated roles, and other settings using the provided commands or configuration options.
-7. Start using the bot in your server by invoking its commands or features.
+7. Run **main.py** and enjoy the BOT.
 
 ENV FILE MUST CONTAIN:
 - DISCORD_TOKEN
